@@ -2,37 +2,24 @@ public class Chick implements Animal
 {     
   protected String myType;     
   protected String mySound;
-  protected String myName;
+  protected int randNum;
   public Chick(){
-  	myType = "Chicks";
-  	mySound = "cluck";
+    randNum = (int)(Math.random()*2)+1;
+    myType = "Chick";
+    mySound = "cheep";
   }
-  public Chick(String type, String sound , String name){
+  public Chick(String type, String firstSound , String secondSound){
+    randNum = (int)(Math.random()*2)+1;
   	myType = type;
-  	mySound = sound;
-  	myName = name;
-  }
-  public void setAge(int age){ //in months
-  	if(age < 2){
-  		myType = "Chicks";
-  		mySound = "cheep";
-  	}
-  	else if(age >= 2 && age <= 96){
-  		myType = "chicken";
-  		mySound = "cluck";
-  	}
-  	else{
-  		myType = "error";
-  		mySound = "error";
-  	}
-  }
-  public String getName(){
-  	return myName; 
+    if(randNum == 1)
+  	mySound = firstSound;
+    else
+  	mySound = secondSound;
   }
   public String getType(){
-  	return myType;
+  	 return myType;
   }
   public String getSound(){
-  	return mySound;
+  	  return mySound;
   }
 }
